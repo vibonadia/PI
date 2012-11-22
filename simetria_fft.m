@@ -1,6 +1,6 @@
+%Aula: 12/11/12
 clear all
 close all
-%Aula: 12/11/12
 %carrega uma imagem [tons de cinza]
 imagem = imread('Banco_de_Imagens/lena_cinza.bmp');
 
