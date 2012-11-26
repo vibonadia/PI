@@ -1,5 +1,5 @@
 %carrega uma imagem (em tons de cinza)
-imagem = imread('/home/viviane/Desktop/PI/Banco_de_Imagens/lena_cinza.bmp');
+imagem = imread('imagens/lena_cinza.bmp');
 
 %muda o mapa de cores
 colormap(gray(256));
