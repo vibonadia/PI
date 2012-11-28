@@ -14,20 +14,17 @@ skipping = imagem([1:2:x],[1:2:y]);
 %media dos pixels
 l = 1;
 for i = 1:2:x
-	#m = 1;
+	m = 1;
 	for j = 1:2:y
 		if(j<=y  && i <= x)
-			if(i != ultimalinha)
-				l = l+1				
-				m=1
-			endif		
+	
 			media(l,m) = imagem(i, j)/4 + imagem(i, j+1)/4 + imagem(i+1, j+1)/4 + imagem(i+1, j)/4;
 			m  = m+1;
 			ultimalinha = i;
 		endif		
 		
 	end
-	#l = l+1; 
+	l = l+1; 
 end
 
 %FFT
