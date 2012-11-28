@@ -2,7 +2,7 @@
 clear all
 close all
 %carrega uma imagem [tons de cinza]
-imagem = imread('Banco_de_Imagens/lena_cinza.bmp');
+imagem = imread('imagens/lena_cinza.bmp');
 
 %ajusta mapa de cores da imagem
 colormap(gray(256));
