@@ -5,7 +5,7 @@ for i=1:256
 	for j=1:256
 		if (i >64 && i<192)&&(j>64 && j<192)
 			y(i,j) = 127; #cor do quadrado interno
-		elseif
+		else
 			y(i,j) =90; #cor do quadrado externo
 		endif
 		
@@ -17,7 +17,7 @@ for i=1:256
 	for j=1:256
 		if (i >64 && i<192)&&(j>64 && j<192)
 			x(i,j) = 127; #cor do quadrado interno
-		elseif
+		else
 			x(i,j) =166;#cor do quadrado externo
 		endif
 		
