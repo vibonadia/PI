@@ -25,7 +25,7 @@ media = aux([1:2:x],[1:2:y]);
 #Cropping Fourier
 fft_f=fft2(f);
 aux1 = fftshift(fft_f);
-aux2 = aux1([128:1:383], [128:1:383]); #regiao de baixa central (baixa frequencia)
+aux2 = aux1([128:1:383], [128:1:383]); #regiao central (baixa frequencia)
 aux3 = fftshift(aux2);
 cropping = ifft2(aux3);
 cropping = abs(cropping);
