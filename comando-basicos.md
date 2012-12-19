@@ -20,6 +20,11 @@ Octave aceita, basicamente 3 tipos de imagens:
 * *rgb* - cada dimensao da matriz corresponde a uma cor dentro da escala RGB.  
 É possível fazer transformações entre esses 3 tipos de imagem.  
   
+Também é possivel conventer entre:  
+* hsv;  
+* rgb;  
+* ntsc.  
+    
 ---
 ##Colormaps
 ---
@@ -38,6 +43,11 @@ quando não espeficicado o parâmetro do colormap criado, o padrão é 64.
   
 **gray** cria um colormap, variando do preto ao branco, passando pelo cinza.  
   
-CONTINUAR A ESCREVER AQUI DEPOIS
+**continua a escrever aqui depois**
 ---
+**hold("on");** mantem a imagem, para poder plotar algo em cima dela depois.  
+**hold("off");** 'desliga' o hold;  
+  
+**plot** plota algo na imagem  
+  
 
