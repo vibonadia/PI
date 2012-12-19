@@ -1,7 +1,7 @@
 # 	Pegue uma das imagens disponibilizadas no moodle. Visualize o módulo, a parte real e a parte imaginária da transformada de Fourier. 
 #	Considere o artifício descrito em aula para a visualização da transformada e determine as regiões de baixa e alta frequências na imagem visualizada. Como essas regiões estão distribuídas?
 
-clc all, close all
+clear all, close all
 #carrega uma imagem
 f = imread('../imagens/4.2.04.jpg');
 
