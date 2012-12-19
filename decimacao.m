@@ -1,38 +1,37 @@
+#	Decimacao ca imagem utilizando as tecnicas de  skipping, media e Cropping
 clear all
 close all
-%imagem em tons de cinza 512x512
-imagem = imread('Imagens/4.2.03.jpg');
 
-%muda o mapa de cores
-colormap(gray(256));
+#carrega uma imagem (em tons de cinza)
+f = imread('imagens/4.2.03.jpg');
+colormap(gray(256)); #muda mapa de cores
 
-[x, y] = size(imagem);
+#Máscara para média 2x2
+h = [1 1; 1 1 ];
 
-%pixel skipping
-skipping = imagem([1:2:x],[1:2:y]); 
+# A soma dos elementos da matriz deve ser 1.
+h2 = h*0.25;
 
-%media dos pixels
-l = 1;
-for i = 1:2:x
-	m = 1;
-	for j = 1:2:y
-		if(j<=y  && i <= x)
-	
-			media(l,m) = imagem(i, j)/4 + imagem(i, j+1)/4 + imagem(i+1, j+1)/4 + imagem(i+1, j)/4;
-			m  = m+1;
-			ultimalinha = i;
-		endif		
-		
-	end
-	l = l+1; 
-end
+[x, y] = size(f);
 
-%FFT
-imagem_fft  = fft2(imagem);
-crop_fft = imagem_fft([129:384], [129:384]);
-crop_ifft = ifft2(crop_fft);
+#pixel skipping
+skipping_f = f([1:2:x],[1:2:y]); 
+skipping2_f= skipping_f;
 
-subplot(2, 2, 1); image(imagem); title('Imagem Original');
-subplot(2, 2, 2);image(skipping); title('Skipping');
-subplot(2, 2, 3);image(media); title('Media');
-subplot(2, 2, 4);image(real(crop_ifft)); title('Cropping FFT');
+#Media com máscara 2x2
+aux = conv2(f,  h2, 'same');
+media = aux([1:2:x],[1:2:y]);
+
+#Cropping Fourier
+fft_f=fft2(f);
+aux1 = fftshift(fft_f);
+aux2 = aux1([128:1:383], [128:1:383]); #regiao central (baixa frequencia)
+aux3 = fftshift(aux2);
+cropping = ifft2(aux3);
+cropping = abs(cropping);
+
+#plots
+figure, colormap(gray(256)), image(f), title('Original');
+figure, colormap(gray(256)), image(skipping2_f), title('Skipping');
+figure, colormap(gray(256)), image(media), title('Media');
+figure, colormap(gray(1000)), image(cropping), title('Cropping');
