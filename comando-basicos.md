@@ -49,5 +49,11 @@ quando não espeficicado o parâmetro do colormap criado, o padrão é 64.
 **hold("off");** 'desliga' o hold;  
   
 **plot** plota algo na imagem  
-  
 
+##filtros
+---
+**conv2** faz a convolução da primeira matriz com a segunda.
+
+**fft2** faz a transformada de Fourier na matriz.
+
+**ifft2** faz a inversa da transformada de Fourier na matriz.
