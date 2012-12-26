@@ -34,7 +34,6 @@ Contém imagens Utilizadas nos execícios.
 		
 ## revisao-pratica
 Contém a resolução de alguns exercicios da lista para primeira prova.  
----------------------
 + ex12
 + ex19
 + ex20
